@@ -1,0 +1,11 @@
+target/
+.project
+.class
+.setting
+.classpath
+.project
+.settings/
+.svn/
+*.log
+.metadata/
+.metadata/.plugins
