@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
+import com.hbdiy.sc.service.ComputeService;
+
 /**
  * <b>类名称：</b>ComsumerController <br/>
  * <b>类描述：</b><br/>
@@ -31,9 +33,17 @@ public class ComsumerController {
 	@Autowired
 	private RestTemplate restTemplate;
 	
+	@Autowired
+	private ComputeService computeService;
+	
 	@RequestMapping("/c-add")
 	public String cadd() {
 		return this.restTemplate.getForEntity("http://compute-service/add?a=1&b=5", String.class).getBody();
+	}
+	
+	@RequestMapping("/add2")
+	public String add2() {
+		return this.computeService.add();
 	}
 	
 }
